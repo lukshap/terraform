@@ -1,0 +1,6 @@
+*.log
+.terraform
+.git
+tfplan
+terraform.tfstate
+plugins
