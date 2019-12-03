@@ -29,7 +29,7 @@ variable instance_alarms {
       namespace           = "AWS/EC2",
       period              = "120",
       statistic           = "Average",
-      threshold           = "80",
+      threshold           = "90",
       alarm_description   = "This metric monitors ec2 cpu utilization"
     },
     {
@@ -59,7 +59,7 @@ variable instance_alarms {
       namespace           = "System/Linux",
       period              = "120",
       statistic           = "Average",
-      threshold           = "80",
+      threshold           = "90",
       alarm_description   = "This metric monitors ec2 memory utilization"
     },
     {
@@ -69,7 +69,7 @@ variable instance_alarms {
       namespace           = "System/Linux",
       period              = "120",
       statistic           = "Average",
-      threshold           = "80",
+      threshold           = "90",
       alarm_description   = "This metric monitors ec2 disk space \"/\" partition utilization",
       dimensions          = {
         MountPath         = "/",
