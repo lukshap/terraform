@@ -117,8 +117,68 @@ variable rds_alarms {
       namespace           = "AWS/RDS",
       period              = "120",
       statistic           = "Average",
-      threshold           = "2000000000",
-      alarm_description   = "This metric monitors rds free RAM"
+      threshold           = "1000000000",
+      alarm_description   = "This metric monitors the amount of available random access memory."
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "DatabaseConnections",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "230",
+      alarm_description   = "This metric monitors the number of database connections in use"
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "DiskQueueDepth",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "5",
+      alarm_description   = "This metric monitors rds the number of outstanding IOs (read/write requests) waiting to access the disk"
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "NetworkReceiveThroughput",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "1000000",
+      alarm_description   = "This metric monitors rds the incoming (Receive) network traffic on the DB instance"
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "NetworkTransmitThroughput",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "40000000",
+      alarm_description   = "This metric monitors the outgoing (Transmit) network traffic on the DB instance"
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "ReadThroughput",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "40000000",
+      alarm_description   = "This metric monitors the average number of bytes read from disk per second"
+    },
+    {
+      comparison_operator = "GreaterThanOrEqualToThreshold",
+      evaluation_periods  = "2",
+      metric_name         = "WriteThroughput",
+      namespace           = "AWS/RDS",
+      period              = "120",
+      statistic           = "Average",
+      threshold           = "1000000",
+      alarm_description   = "This metric monitors the average number of bytes written to disk per second"
     }
   ]
 }
