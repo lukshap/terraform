@@ -1,3 +1,10 @@
+module "sns_topic" {
+  source                    = "git::git@github.com:lukshap/aws_sns_topic.git"
+//  source                    = "../aws_sns_topic"
+  region                    = var.region
+  alarm_email               = var.alarm_email
+}
+
 module "ec2_alarms" {
   source                    = "git::git@github.com:lukshap/aws_alarms_ec2.git"
 //  source                    = "../aws_alarms_ec2"
@@ -5,8 +12,6 @@ module "ec2_alarms" {
   instance_tag_name_jenkins = var.instance_tag_name_jenkins
   instance_tag_name_dev     = var.instance_tag_name_dev
   instance_tag_name_prod    = var.instance_tag_name_prod
-  alarm_email               = var.alarm_email
-  region                    = var.region
 }
 
 module "rds_alarms" {
